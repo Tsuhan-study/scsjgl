@@ -113,7 +113,7 @@ namespace scsjgl
                     this.textBox47.Text = bhd.JK_name;
                     this.textBox46.Text = bhd.JK_sjdh;
 
-                    //this.tabControl1.Enabled = true;
+                    this.tabControl1.Enabled = true;
                 }
                 else
                 {

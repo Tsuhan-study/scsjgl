@@ -1064,9 +1064,9 @@
             this.label44.AutoSize = true;
             this.label44.Location = new System.Drawing.Point(20, 603);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(83, 12);
+            this.label44.Size = new System.Drawing.Size(71, 12);
             this.label44.TabIndex = 63;
-            this.label44.Text = "老化前Pomin：";
+            this.label44.Text = "焊前Pomin：";
             // 
             // label45
             // 
@@ -1291,9 +1291,9 @@
             this.label60.AutoSize = true;
             this.label60.Location = new System.Drawing.Point(290, 603);
             this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(83, 12);
+            this.label60.Size = new System.Drawing.Size(71, 12);
             this.label60.TabIndex = 111;
-            this.label60.Text = "老化前Pomax：";
+            this.label60.Text = "焊前Pomax：";
             // 
             // label61
             // 

@@ -16,7 +16,7 @@ namespace BLL
 		/// <summary>
 		/// 是否存在该记录
 		/// </summary>
-		public bool Exists(int name,int pwd)
+		public bool Exists(string name,string pwd)
 		{
             return yhdal.Exists(name, pwd);
 		}
@@ -24,7 +24,7 @@ namespace BLL
         /// <summary>
         /// 是否存在该记录
         /// </summary>
-        public bool Exist(int 工号)
+        public bool Exist(string 工号)
         {
             return yhdal.Exist(工号);
         }
@@ -35,7 +35,7 @@ namespace BLL
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public tsuhan_scgl_yh GetModel(int 工号)
+        public tsuhan_scgl_yh GetModel(string 工号)
         {
             return yhdal.GetModel(工号);
         }

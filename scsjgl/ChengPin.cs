@@ -66,7 +66,7 @@ namespace scsjgl
              DialogResult dr = MessageBox.Show("确定要添加吗？？？","提示",MessageBoxButtons.YesNo);
              if (dr == DialogResult.Yes)
              {
-                 var gt = yhbll.GetModel(Convert.ToInt32(gh));
+                 var gt = yhbll.GetModel(gh);
                  tsuhan_gt_cpbm cpbm = new tsuhan_gt_cpbm();
                  cpbm.成品编码 = this.txtCPBM.Text;
                  cpbm.时间 =Convert.ToDateTime(this.dtpTime.Text);

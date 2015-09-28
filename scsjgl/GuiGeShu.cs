@@ -26,7 +26,7 @@ namespace scsjgl
 
         private void GuiGeShu_Load(object sender, EventArgs e)
         {
-            var gt = yhbll.GetModel(Convert.ToInt32(gh));
+            var gt = yhbll.GetModel(gh);
             if (gt.职务 == "系统管理员")
             {
                 this.button2.Enabled = true;
@@ -376,32 +376,32 @@ namespace scsjgl
             {
                 this.textBox28.Text = "0";
             }
-            spec.老化前max = Convert.ToDecimal(this.textBox28.Text);
+            spec.qpomax = Convert.ToDecimal(this.textBox28.Text);
             if (this.textBox20.Text == "")
             {
                 this.textBox20.Text = "0";
             }
-            spec.老化前min = Convert.ToDecimal(this.textBox20.Text);
+            spec.qpomin = Convert.ToDecimal(this.textBox20.Text);
             if (this.textBox62.Text == "")
             {
                 this.textBox62.Text = "0";
             }
-            spec.老化前maxBFB = Convert.ToInt32(this.textBox62.Text);
+            spec.qpomaxBFB = Convert.ToInt32(this.textBox62.Text);
             if (this.textBox61.Text == "")
             {
                 this.textBox61.Text = "0";
             }
-            spec.老化前minBFB = Convert.ToInt32(this.textBox61.Text);
+            spec.qpominBFB = Convert.ToInt32(this.textBox61.Text);
             if (this.textBox27.Text == "")
             {
                 this.textBox27.Text = "0";
             }
-            spec.前后对比max = Convert.ToDecimal(this.textBox27.Text);
+            spec.qhpomax = Convert.ToDecimal(this.textBox27.Text);
             if (this.textBox19.Text == "")
             {
                 this.textBox19.Text = "0";
             }
-            spec.前后对比min = Convert.ToDecimal(this.textBox19.Text);
+            spec.qhpomin = Convert.ToDecimal(this.textBox19.Text);
 
             if (this.textBox54.Text == "")
             {
@@ -884,53 +884,53 @@ namespace scsjgl
                  {
                      this.textBox21.Text = Convert.ToString(spec.Ifmin);
                  }
-                 if (spec.老化前max == null)
+                 if (spec.qpomax == null)
                  {
                      this.textBox28.Text = "0";
                  }
                  else
                  {
-                     this.textBox28.Text = Convert.ToString(spec.老化前max);
+                     this.textBox28.Text = Convert.ToString(spec.qpomax);
                  }
-                 if (spec.老化前min == null)
+                 if (spec.qpomin == null)
                  {
                      this.textBox20.Text = "0";
                  }
                  else
                  {
-                     this.textBox20.Text = Convert.ToString(spec.老化前min);
+                     this.textBox20.Text = Convert.ToString(spec.qpomin);
                  }
-                 if (spec.老化前maxBFB == null)
+                 if (spec.qpomaxBFB == null)
                  {
                      this.textBox62.Text = "0";
                  }
                  else
                  {
-                     this.textBox62.Text = Convert.ToString(spec.老化前maxBFB);
+                     this.textBox62.Text = Convert.ToString(spec.qpomaxBFB);
                  }
-                 if (spec.老化前minBFB == null)
+                 if (spec.qpominBFB == null)
                  {
                      this.textBox61.Text = "0";
                  }
                  else
                  {
-                     this.textBox61.Text = Convert.ToString(spec.老化前minBFB);
+                     this.textBox61.Text = Convert.ToString(spec.qpominBFB);
                  }
-                 if (spec.前后对比max == null)
+                 if (spec.qhpomax == null)
                  {
                      this.textBox27.Text = "0";
                  }
                  else
                  {
-                     this.textBox27.Text = Convert.ToString(spec.前后对比max);
+                     this.textBox27.Text = Convert.ToString(spec.qhpomax);
                  }
-                 if (spec.前后对比min == null)
+                 if (spec.qhpomin == null)
                  {
                      this.textBox19.Text = "0";
                  }
                  else
                  {
-                     this.textBox19.Text = Convert.ToString(spec.前后对比min);
+                     this.textBox19.Text = Convert.ToString(spec.qhpomin);
                  }
 
                  if (spec.Vbrmax == null)

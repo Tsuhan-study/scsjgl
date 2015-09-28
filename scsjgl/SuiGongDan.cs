@@ -37,7 +37,7 @@ namespace scsjgl
         private void SuiGongDanGX_Load(object sender, EventArgs e)
         {
             //this.cbGGSBH.ReadOnly = true;
-            var gt = yhbll.GetModel(Convert.ToInt32(gh));
+            var gt = yhbll.GetModel(gh);
             this.tsslLRYtxt.Text =gt.姓名;
             dTPjh.Text = DateTime.Now.ToString();
             dTPxd.Text = DateTime.Now.ToString();
@@ -94,7 +94,7 @@ namespace scsjgl
                 if (result != true)
                 {
                     MessageBox.Show("此单号还没有录入数据", "提示");
-                    var gt = yhbll.GetModel(Convert.ToInt32(gh));
+                    var gt = yhbll.GetModel(gh);
                     this.tsslLRYtxt.Text = gt.姓名;
                     this.tsslLRTIMEtxt.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
                     this.tbFHBHDH.Text = this.tbsgdxh1.Text;

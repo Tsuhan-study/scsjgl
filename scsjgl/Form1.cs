@@ -23,7 +23,7 @@ namespace scsjgl
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            var gt = yhbll.GetModel(Convert.ToInt32(ft));
+            var gt = yhbll.GetModel(ft);
             if (gt.职务 == "系统管理员")
             {
                 this.toolStripMenuItem1.Enabled = true;
@@ -95,7 +95,7 @@ namespace scsjgl
 
         private void 人员管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var gt = yhbll.GetModel(Convert.ToInt32(ft));
+            var gt = yhbll.GetModel(ft);
             if (gt.职务 == "前台" || gt.职务 == "人事")
             {
                 Register reg = new Register();//人员管理

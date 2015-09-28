@@ -98,8 +98,11 @@ namespace scsjgl
         /// <param name="yh"></param>
         private void ModAdd(tsuhan_scgl_yh yh)
         {
-            yh.工号 = Convert.ToInt32(this.txtGH.Text);
-            yh.密码 = 111111;
+            var gh = this.txtGH.Text.Trim();
+            string gh1 = gh.ToString().PadLeft(5,'0');
+            //string aastr = aa.ToString().PadLeft(7, '0');
+            yh.工号 = gh1;
+            yh.密码 = "111111";
             yh.姓名 = this.txtName.Text;
             yh.性别 = this.cbSex.Text;
             yh.机构 = this.cbJG.Text;
@@ -253,14 +256,16 @@ namespace scsjgl
             }
             else
             { 
-                var gh = Convert.ToInt32(this.txtGH.Text);
+                var gh =this.txtGH.Text;
+                //gh = gh.TrimStart('0');
+                var gh1 = gh.ToString().PadLeft(5, '0');
                 bool result = false;
-                result = yhbll.Exist(gh);
+                result = yhbll.Exist(gh1);
                 if (result == true)
                 {
-                    tsuhan_scgl_yh yh = yhbll.GetModel(gh);
+                    tsuhan_scgl_yh yh = yhbll.GetModel(gh1);
 
-                    this.txtGH.Text = Convert.ToString(yh.工号);
+                    //this.txtGH.Text = Convert.ToString(yh.工号);
                     this.txtName.Text = yh.姓名;
                     this.cbSex.Text = yh.性别;
                     this.cbJG.Text = yh.机构;
@@ -450,6 +455,19 @@ namespace scsjgl
                 DataSet ds = yhbll.getAll2();
                 this.dataGridView1.DataSource = ds.Tables[0];
                 this.txtCountNum.Text = Convert.ToString(dataGridView1.Rows.Count);
+            }
+        }
+
+        /// <summary>
+        /// 判断是否输入数字
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtGH_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8 && e.KeyChar != 13 && e.KeyChar != 45 && e.KeyChar != 46)
+            {
+                e.Handled = true;
             }
         }
 

@@ -75,7 +75,7 @@ namespace scsjgl
              if (dr == DialogResult.Yes)
              {
                  tsuhan_scgl_khdm khdms = new tsuhan_scgl_khdm();
-                 var gt = yhbll.GetModel(Convert.ToInt32(gh));
+                 var gt = yhbll.GetModel(gh);
                  khdms.客户代码 = this.txtKHDM.Text;
                  khdms.客户信息 = this.txtKHXX.Text;
                  khdms.录入时间 = DateTime.Now.ToString();

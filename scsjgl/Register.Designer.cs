@@ -153,6 +153,7 @@
             this.txtGH.Name = "txtGH";
             this.txtGH.Size = new System.Drawing.Size(96, 23);
             this.txtGH.TabIndex = 1;
+            this.txtGH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGH_KeyPress);
             this.txtGH.Leave += new System.EventHandler(this.txtGH_Leave);
             // 
             // label2

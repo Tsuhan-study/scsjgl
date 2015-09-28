@@ -117,7 +117,9 @@ namespace Maticsoft.Model
         private decimal? _txiddmin;
         private decimal? _txiddmax;
         private decimal? _qpomin;
+        private int? _qpominbfb;
         private decimal? _qpomax;
+        private int? _qpomaxbfb;
         private decimal? _qhpomin;
         private decimal? _qhpomax;
         private string _ptλc;
@@ -156,12 +158,6 @@ namespace Maticsoft.Model
         private decimal? _senhmax;
         private decimal? _sendmin;
         private decimal? _sendmax;
-        private decimal? _老化前min;
-        private int? _老化前minbfb;
-        private decimal? _老化前max;
-        private int? _老化前maxbfb;
-        private decimal? _前后对比min;
-        private decimal? _前后对比max;
         private DateTime? _上传时间;
         private DateTime? _审核时间;
         private string _备注;
@@ -1016,10 +1012,26 @@ namespace Maticsoft.Model
         /// <summary>
         /// 
         /// </summary>
+        public int? qpominBFB
+        {
+            set { _qpominbfb = value; }
+            get { return _qpominbfb; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         public decimal? qpomax
         {
             set { _qpomax = value; }
             get { return _qpomax; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public int? qpomaxBFB
+        {
+            set { _qpomaxbfb = value; }
+            get { return _qpomaxbfb; }
         }
         /// <summary>
         /// 
@@ -1324,54 +1336,6 @@ namespace Maticsoft.Model
         {
             set { _sendmax = value; }
             get { return _sendmax; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public decimal? 老化前min
-        {
-            set { _老化前min = value; }
-            get { return _老化前min; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public int? 老化前minBFB
-        {
-            set { _老化前minbfb = value; }
-            get { return _老化前minbfb; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public decimal? 老化前max
-        {
-            set { _老化前max = value; }
-            get { return _老化前max; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public int? 老化前maxBFB
-        {
-            set { _老化前maxbfb = value; }
-            get { return _老化前maxbfb; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public decimal? 前后对比min
-        {
-            set { _前后对比min = value; }
-            get { return _前后对比min; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public decimal? 前后对比max
-        {
-            set { _前后对比max = value; }
-            get { return _前后对比max; }
         }
         /// <summary>
         /// 

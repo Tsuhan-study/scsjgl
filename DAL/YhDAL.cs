@@ -15,14 +15,14 @@ namespace DAL
         /// <summary>
         /// 是否存在该记录
         /// </summary>
-        public bool Exists(int 工号, int 密码)
+        public bool Exists(string 工号, string 密码)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select count(1) from tsuhan_scgl_yh2");
             strSql.Append(" where 工号=@工号 and 密码=@密码");
             SqlParameter[] parameters = {
-					new SqlParameter("@工号", SqlDbType.Int,4),
-                    new SqlParameter("@密码",SqlDbType.Int,4)
+					new SqlParameter("@工号", SqlDbType.NVarChar,20),
+                    new SqlParameter("@密码",SqlDbType.NVarChar,20)
                                         };
             parameters[0].Value = 工号;
             parameters[1].Value = 密码;
@@ -32,44 +32,29 @@ namespace DAL
         /// <summary>
         /// 是否存在该记录
         /// </summary>
-        public bool Exist(int 工号)
+        public bool Exist(string 工号)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select count(1) from tsuhan_scgl_yh2");
             strSql.Append(" where 工号=@工号 ");
             SqlParameter[] parameters = {
-					new SqlParameter("@工号", SqlDbType.Int,4)			};
+					new SqlParameter("@工号", SqlDbType.NVarChar,20)			};
             parameters[0].Value = 工号;
             return dbhelper3.Exists(strSql.ToString(), parameters);
         }
-
-        ///// <summary>
-        ///// 是否存在该记录
-        ///// </summary>
-        //public bool Exis(string 姓名)
-        //{
-        //    string sql = "select * from tsuhan_scgl_yh2 where 姓名='" + 姓名 + "'";
-            
-
-        //    SqlParameter[] parameters = {
-        //            new SqlParameter("@姓名", SqlDbType.NVarChar,40)};
-        //    parameters[0].Value = 姓名;
-        //    return dbhelper3.Exists(sql, parameters);
-        //}
-
 
         /// <summary>
         /// 根据工号查询工序名称
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public tsuhan_scgl_yh GetModel(int 工号)
+        public tsuhan_scgl_yh GetModel(string 工号)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select top 1 离职日期,离职原因,是否工资卡,批注,介绍人,指纹登记号码,工号,姓名,学历,专业,部门,机构,职务,新衣柜,衣柜,新鞋柜,鞋柜1,鞋柜2,性别,入职日期,身份证号,身份证地址,现住址,电话,紧急联系人,紧急联系人电话,婚姻状况,民族,籍贯,户籍,是否转正,转正时间,是否购买社保,购买社保时间,是否购买商保,人事资料情况,是否签订合同,合同年限,起始日期,终止日期,合同状态,合同状态备注,备注,在职状态,邮箱,内部小号,密码,AB班,other1,other2,other3,other4,other5,other6,other7,other8,other9,other10 from tsuhan_scgl_yh2 ");
+            strSql.Append("select top 1 离职日期,离职原因,是否工资卡,批注,介绍人,指纹登记号码,工号,姓名,学历,专业,部门,机构,职务,新衣柜,衣柜,新鞋柜,鞋柜1,鞋柜2,性别,入职日期,身份证号,身份证地址,现住址,电话,紧急联系人,紧急联系人电话,婚姻状况,民族,籍贯,户籍,是否转正,转正时间,是否购买社保,购买社保时间,是否购买商保,人事资料情况,是否签订合同,合同年限,起始日期,终止日期,合同状态,合同状态备注,备注,在职状态,邮箱,内部小号,密码,AB班,other1,other2,other3,other4,other5,other6,other7,other8,other9,other10 from tsuhan_scgl_yh2");
             strSql.Append(" where 工号=@工号");
             SqlParameter[] parameters = {
-					new SqlParameter("@工号", SqlDbType.Int,4)		};
+					new SqlParameter("@工号", SqlDbType.NVarChar,20)		};
             parameters[0].Value = 工号;
             tsuhan_scgl_yh model = new tsuhan_scgl_yh();
             DataSet ds = dbhelper3.Query(strSql.ToString(), parameters);
@@ -82,31 +67,6 @@ namespace DAL
                 return null;
             };
         }
-
-        ///// <summary>
-        ///// 根据姓名查询工序名称
-        ///// </summary>
-        ///// <param name="name"></param>
-        ///// <returns></returns>
-        //public tsuhan_scgl_yh2 GetModelName(string 姓名)
-        //{
-        //    StringBuilder strSql = new StringBuilder();
-        //    strSql.Append("select  top 1 工号,姓名,密码,用户级别,工序名称,性别,联系电话,AB班,登录次数 from tsuhan_scgl_yh2 ");
-        //    strSql.Append(" where 姓名=@姓名 ");
-        //    SqlParameter[] parameters = {
-        //            new SqlParameter("@姓名", SqlDbType.VarChar,40)			};
-        //    parameters[0].Value = 姓名;
-        //    tsuhan_scgl_yh2 model = new tsuhan_scgl_yh2();
-        //    DataSet ds = dbhelper3.Query(strSql.ToString(), parameters);
-        //    if (ds.Tables[0].Rows.Count > 0)
-        //    {
-        //        return DataRowToModel(ds.Tables[0].Rows[0]);
-        //    }
-        //    else
-        //    {
-        //        return null;
-        //    };
-        //}
 
         /// <summary>
         /// 得到一个对象实体
@@ -140,9 +100,9 @@ namespace DAL
 				{
 					model.指纹登记号码=row["指纹登记号码"].ToString();
 				}
-				if(row["工号"]!=null && row["工号"].ToString()!="")
+				if(row["工号"]!=null)
 				{
-					model.工号=int.Parse(row["工号"].ToString());
+					model.工号=row["工号"].ToString();
 				}
 				if(row["姓名"]!=null)
 				{
@@ -300,9 +260,9 @@ namespace DAL
 				{
 					model.内部小号=row["内部小号"].ToString();
 				}
-				if(row["密码"]!=null && row["密码"].ToString()!="")
+				if(row["密码"]!=null)
 				{
-					model.密码=int.Parse(row["密码"].ToString());
+					model.密码=row["密码"].ToString();
 				}
 				if(row["AB班"]!=null)
 				{
@@ -407,7 +367,7 @@ namespace DAL
 					new SqlParameter("@批注", SqlDbType.NVarChar,255),
 					new SqlParameter("@介绍人", SqlDbType.NVarChar,255),
 					new SqlParameter("@指纹登记号码", SqlDbType.NVarChar,255),
-					new SqlParameter("@工号", SqlDbType.Int,4),
+					new SqlParameter("@工号", SqlDbType.NVarChar,20),
 					new SqlParameter("@姓名", SqlDbType.NVarChar,255),
 					new SqlParameter("@学历", SqlDbType.NVarChar,255),
 					new SqlParameter("@专业", SqlDbType.NVarChar,255),
@@ -447,7 +407,7 @@ namespace DAL
 					new SqlParameter("@在职状态", SqlDbType.NVarChar,50),
 					new SqlParameter("@邮箱", SqlDbType.NVarChar,50),
 					new SqlParameter("@内部小号", SqlDbType.NVarChar,20),
-					new SqlParameter("@密码", SqlDbType.Int,4),
+					new SqlParameter("@密码", SqlDbType.NVarChar,20),
 					new SqlParameter("@AB班", SqlDbType.NVarChar,10),
 					new SqlParameter("@other1", SqlDbType.NVarChar,50),
 					new SqlParameter("@other2", SqlDbType.NVarChar,50),
@@ -642,7 +602,7 @@ namespace DAL
 					new SqlParameter("@在职状态", SqlDbType.NVarChar,50),
 					new SqlParameter("@邮箱", SqlDbType.NVarChar,50),
 					new SqlParameter("@内部小号", SqlDbType.NVarChar,20),
-					new SqlParameter("@密码", SqlDbType.Int,4),
+					new SqlParameter("@密码", SqlDbType.NVarChar,20),
 					new SqlParameter("@AB班", SqlDbType.NVarChar,10),
 					new SqlParameter("@other1", SqlDbType.NVarChar,50),
 					new SqlParameter("@other2", SqlDbType.NVarChar,50),
@@ -654,7 +614,7 @@ namespace DAL
 					new SqlParameter("@other8", SqlDbType.NVarChar,50),
 					new SqlParameter("@other9", SqlDbType.NVarChar,50),
 					new SqlParameter("@other10", SqlDbType.NVarChar,50),
-					new SqlParameter("@工号", SqlDbType.Int,4)};
+					new SqlParameter("@工号", SqlDbType.NVarChar,20)};
             parameters[0].Value = model.离职日期;
             parameters[1].Value = model.离职原因;
             parameters[2].Value = model.是否工资卡;
@@ -728,14 +688,14 @@ namespace DAL
         /// <summary>
         /// 删除一条数据
         /// </summary>
-        public bool Delete(int 工号)
+        public bool Delete(string 工号)
         {
 
             StringBuilder strSql = new StringBuilder();
             strSql.Append("delete from tsuhan_scgl_yh2");
             strSql.Append(" where 工号=@工号 ");
             SqlParameter[] parameters = {
-					new SqlParameter("@工号", SqlDbType.Int,4)			};
+					new SqlParameter("@工号", SqlDbType.NVarChar,20)			};
             parameters[0].Value = 工号;
 
             int rows = dbhelper3.ExecuteSql(strSql.ToString(), parameters);

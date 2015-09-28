@@ -45,9 +45,9 @@ namespace DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into tsuhan_spec(");
-            strSql.Append("规格书,产品型号,成品编码,客户代码,LDλc,LD方法,Tc_d,Tc_c,Tc_h,Po,Pomin,PominBFB,Pomax,PomaxBFB,Pohmin,Pohmax,Podmin,Podmax,Ithmin,Ithmax,Ithhmin,Ithhmax,Ithdmin,Ithdmax,Ifmin,Ifmax,Ifhmin,Ifhmax,Ifdmin,Ifdmax,Ifc,Ifh,Ifd,Vfmin,Vfmax,Vfhmin,Vfhmax,Vfdmax,Vfdmin,Imomin,ImominBFB,Imomax,ImomaxBFB,Imohmin,Imohmax,Imodmin,Imodmax,Esmin,EsminBFB,Esmax,EsmaxBFB,Eshmin,Eshmax,Esdmin,Esdmax,Rsmin,Rsmax,Rshmin,Rshmax,Rsdmin,Rsdmax,TEdmin,TEdmax,TEhmin,TEhmax,LDλcmin,LDλcmax,LDλchmin,LDλchmax,LDλcdmin,LDλcdmax,LDλmin,LDλmax,LDλhmin,LDλhmax,LDλdmin,LDλdmax,Srmsmin,Srmsmax,Srmshmin,Srmshmax,Srmsdmin,Srmsdmax,Pkinkmin,Pkinkmax,Pkinkhmin,Pkinkhmax,Pkinkdmin,Pkinkdmax,Kimomin,Kimomax,Kimohmin,Kimohmax,Kimodmin,Kimodmax,ImoKinkmin,ImoKinkmax,Idarkmin,Idarkmax,Txidmin,Txidmax,Txidhmin,Txidhmax,Txiddmin,Txiddmax,qpomin,qpomax,qhpomin,qhpomax,PTλc,PT方法,APT_PT,码型,速率,Sen,通时间,误码率,Vbr34,Vbrmin,Vbrmax,Vbrhmin,Vbrhmax,Vbrdmin,Vbrdmax,Iccmin,Iccmax,Icchmin,Icchmax,Iccdmin,Iccdmax,Iopmin,IopminBFB,Iopmax,Iomin,IominBFB,Iomax,Idmin,Idmax,Senmin,Senmax,SenmaxdB,senhmin,senhmax,sendmin,sendmax,老化前min,老化前minBFB,老化前max,老化前maxBFB,前后对比min,前后对比max,上传时间,审核时间,备注)");
+            strSql.Append("规格书,产品型号,成品编码,客户代码,LDλc,LD方法,Tc_d,Tc_c,Tc_h,Po,Pomin,PominBFB,Pomax,PomaxBFB,Pohmin,Pohmax,Podmin,Podmax,Ithmin,Ithmax,Ithhmin,Ithhmax,Ithdmin,Ithdmax,Ifmin,Ifmax,Ifhmin,Ifhmax,Ifdmin,Ifdmax,Ifc,Ifh,Ifd,Vfmin,Vfmax,Vfhmin,Vfhmax,Vfdmax,Vfdmin,Imomin,ImominBFB,Imomax,ImomaxBFB,Imohmin,Imohmax,Imodmin,Imodmax,Esmin,EsminBFB,Esmax,EsmaxBFB,Eshmin,Eshmax,Esdmin,Esdmax,Rsmin,Rsmax,Rshmin,Rshmax,Rsdmin,Rsdmax,TEdmin,TEdmax,TEhmin,TEhmax,LDλcmin,LDλcmax,LDλchmin,LDλchmax,LDλcdmin,LDλcdmax,LDλmin,LDλmax,LDλhmin,LDλhmax,LDλdmin,LDλdmax,Srmsmin,Srmsmax,Srmshmin,Srmshmax,Srmsdmin,Srmsdmax,Pkinkmin,Pkinkmax,Pkinkhmin,Pkinkhmax,Pkinkdmin,Pkinkdmax,Kimomin,Kimomax,Kimohmin,Kimohmax,Kimodmin,Kimodmax,ImoKinkmin,ImoKinkmax,Idarkmin,Idarkmax,Txidmin,Txidmax,Txidhmin,Txidhmax,Txiddmin,Txiddmax,qpomin,qpominBFB,qpomax,qpomaxBFB,qhpomin,qhpomax,PTλc,PT方法,APT_PT,码型,速率,Sen,通时间,误码率,Vbr34,Vbrmin,Vbrmax,Vbrhmin,Vbrhmax,Vbrdmin,Vbrdmax,Iccmin,Iccmax,Icchmin,Icchmax,Iccdmin,Iccdmax,Iopmin,IopminBFB,Iopmax,Iomin,IominBFB,Iomax,Idmin,Idmax,Senmin,Senmax,SenmaxdB,senhmin,senhmax,sendmin,sendmax,上传时间,审核时间,备注)");
             strSql.Append(" values (");
-            strSql.Append("@规格书,@产品型号,@成品编码,@客户代码,@LDλc,@LD方法,@Tc_d,@Tc_c,@Tc_h,@Po,@Pomin,@PominBFB,@Pomax,@PomaxBFB,@Pohmin,@Pohmax,@Podmin,@Podmax,@Ithmin,@Ithmax,@Ithhmin,@Ithhmax,@Ithdmin,@Ithdmax,@Ifmin,@Ifmax,@Ifhmin,@Ifhmax,@Ifdmin,@Ifdmax,@Ifc,@Ifh,@Ifd,@Vfmin,@Vfmax,@Vfhmin,@Vfhmax,@Vfdmax,@Vfdmin,@Imomin,@ImominBFB,@Imomax,@ImomaxBFB,@Imohmin,@Imohmax,@Imodmin,@Imodmax,@Esmin,@EsminBFB,@Esmax,@EsmaxBFB,@Eshmin,@Eshmax,@Esdmin,@Esdmax,@Rsmin,@Rsmax,@Rshmin,@Rshmax,@Rsdmin,@Rsdmax,@TEdmin,@TEdmax,@TEhmin,@TEhmax,@LDλcmin,@LDλcmax,@LDλchmin,@LDλchmax,@LDλcdmin,@LDλcdmax,@LDλmin,@LDλmax,@LDλhmin,@LDλhmax,@LDλdmin,@LDλdmax,@Srmsmin,@Srmsmax,@Srmshmin,@Srmshmax,@Srmsdmin,@Srmsdmax,@Pkinkmin,@Pkinkmax,@Pkinkhmin,@Pkinkhmax,@Pkinkdmin,@Pkinkdmax,@Kimomin,@Kimomax,@Kimohmin,@Kimohmax,@Kimodmin,@Kimodmax,@ImoKinkmin,@ImoKinkmax,@Idarkmin,@Idarkmax,@Txidmin,@Txidmax,@Txidhmin,@Txidhmax,@Txiddmin,@Txiddmax,@qpomin,@qpomax,@qhpomin,@qhpomax,@PTλc,@PT方法,@APT_PT,@码型,@速率,@Sen,@通时间,@误码率,@Vbr34,@Vbrmin,@Vbrmax,@Vbrhmin,@Vbrhmax,@Vbrdmin,@Vbrdmax,@Iccmin,@Iccmax,@Icchmin,@Icchmax,@Iccdmin,@Iccdmax,@Iopmin,@IopminBFB,@Iopmax,@Iomin,@IominBFB,@Iomax,@Idmin,@Idmax,@Senmin,@Senmax,@SenmaxdB,@senhmin,@senhmax,@sendmin,@sendmax,@老化前min,@老化前minBFB,@老化前max,@老化前maxBFB,@前后对比min,@前后对比max,@上传时间,@审核时间,@备注)");
+            strSql.Append("@规格书,@产品型号,@成品编码,@客户代码,@LDλc,@LD方法,@Tc_d,@Tc_c,@Tc_h,@Po,@Pomin,@PominBFB,@Pomax,@PomaxBFB,@Pohmin,@Pohmax,@Podmin,@Podmax,@Ithmin,@Ithmax,@Ithhmin,@Ithhmax,@Ithdmin,@Ithdmax,@Ifmin,@Ifmax,@Ifhmin,@Ifhmax,@Ifdmin,@Ifdmax,@Ifc,@Ifh,@Ifd,@Vfmin,@Vfmax,@Vfhmin,@Vfhmax,@Vfdmax,@Vfdmin,@Imomin,@ImominBFB,@Imomax,@ImomaxBFB,@Imohmin,@Imohmax,@Imodmin,@Imodmax,@Esmin,@EsminBFB,@Esmax,@EsmaxBFB,@Eshmin,@Eshmax,@Esdmin,@Esdmax,@Rsmin,@Rsmax,@Rshmin,@Rshmax,@Rsdmin,@Rsdmax,@TEdmin,@TEdmax,@TEhmin,@TEhmax,@LDλcmin,@LDλcmax,@LDλchmin,@LDλchmax,@LDλcdmin,@LDλcdmax,@LDλmin,@LDλmax,@LDλhmin,@LDλhmax,@LDλdmin,@LDλdmax,@Srmsmin,@Srmsmax,@Srmshmin,@Srmshmax,@Srmsdmin,@Srmsdmax,@Pkinkmin,@Pkinkmax,@Pkinkhmin,@Pkinkhmax,@Pkinkdmin,@Pkinkdmax,@Kimomin,@Kimomax,@Kimohmin,@Kimohmax,@Kimodmin,@Kimodmax,@ImoKinkmin,@ImoKinkmax,@Idarkmin,@Idarkmax,@Txidmin,@Txidmax,@Txidhmin,@Txidhmax,@Txiddmin,@Txiddmax,@qpomin,@qpominBFB,@qpomax,@qpomaxBFB,@qhpomin,@qhpomax,@PTλc,@PT方法,@APT_PT,@码型,@速率,@Sen,@通时间,@误码率,@Vbr34,@Vbrmin,@Vbrmax,@Vbrhmin,@Vbrhmax,@Vbrdmin,@Vbrdmax,@Iccmin,@Iccmax,@Icchmin,@Icchmax,@Iccdmin,@Iccdmax,@Iopmin,@IopminBFB,@Iopmax,@Iomin,@IominBFB,@Iomax,@Idmin,@Idmax,@Senmin,@Senmax,@SenmaxdB,@senhmin,@senhmax,@sendmin,@sendmax,@上传时间,@审核时间,@备注)");
             SqlParameter[] parameters = {
 					new SqlParameter("@规格书", SqlDbType.NVarChar,15),
 					new SqlParameter("@产品型号", SqlDbType.NVarChar,25),
@@ -155,7 +155,9 @@ namespace DAL
 					new SqlParameter("@Txiddmin", SqlDbType.Float,8),
 					new SqlParameter("@Txiddmax", SqlDbType.Float,8),
 					new SqlParameter("@qpomin", SqlDbType.Float,8),
+					new SqlParameter("@qpominBFB", SqlDbType.Int,4),
 					new SqlParameter("@qpomax", SqlDbType.Float,8),
+					new SqlParameter("@qpomaxBFB", SqlDbType.Int,4),
 					new SqlParameter("@qhpomin", SqlDbType.Float,8),
 					new SqlParameter("@qhpomax", SqlDbType.Float,8),
 					new SqlParameter("@PTλc", SqlDbType.NVarChar,10),
@@ -194,12 +196,6 @@ namespace DAL
 					new SqlParameter("@senhmax", SqlDbType.Float,8),
 					new SqlParameter("@sendmin", SqlDbType.Float,8),
 					new SqlParameter("@sendmax", SqlDbType.Float,8),
-					new SqlParameter("@老化前min", SqlDbType.Float,8),
-					new SqlParameter("@老化前minBFB", SqlDbType.Int,4),
-					new SqlParameter("@老化前max", SqlDbType.Float,8),
-					new SqlParameter("@老化前maxBFB", SqlDbType.Int,4),
-					new SqlParameter("@前后对比min", SqlDbType.Float,8),
-					new SqlParameter("@前后对比max", SqlDbType.Float,8),
 					new SqlParameter("@上传时间", SqlDbType.DateTime),
 					new SqlParameter("@审核时间", SqlDbType.DateTime),
 					new SqlParameter("@备注", SqlDbType.NVarChar,50)};
@@ -309,54 +305,50 @@ namespace DAL
             parameters[103].Value = model.Txiddmin;
             parameters[104].Value = model.Txiddmax;
             parameters[105].Value = model.qpomin;
-            parameters[106].Value = model.qpomax;
-            parameters[107].Value = model.qhpomin;
-            parameters[108].Value = model.qhpomax;
-            parameters[109].Value = model.PTλc;
-            parameters[110].Value = model.PT方法;
-            parameters[111].Value = model.APT_PT;
-            parameters[112].Value = model.码型;
-            parameters[113].Value = model.速率;
-            parameters[114].Value = model.Sen;
-            parameters[115].Value = model.通时间;
-            parameters[116].Value = model.误码率;
-            parameters[117].Value = model.Vbr34;
-            parameters[118].Value = model.Vbrmin;
-            parameters[119].Value = model.Vbrmax;
-            parameters[120].Value = model.Vbrhmin;
-            parameters[121].Value = model.Vbrhmax;
-            parameters[122].Value = model.Vbrdmin;
-            parameters[123].Value = model.Vbrdmax;
-            parameters[124].Value = model.Iccmin;
-            parameters[125].Value = model.Iccmax;
-            parameters[126].Value = model.Icchmin;
-            parameters[127].Value = model.Icchmax;
-            parameters[128].Value = model.Iccdmin;
-            parameters[129].Value = model.Iccdmax;
-            parameters[130].Value = model.Iopmin;
-            parameters[131].Value = model.IopminBFB;
-            parameters[132].Value = model.Iopmax;
-            parameters[133].Value = model.Iomin;
-            parameters[134].Value = model.IominBFB;
-            parameters[135].Value = model.Iomax;
-            parameters[136].Value = model.Idmin;
-            parameters[137].Value = model.Idmax;
-            parameters[138].Value = model.Senmin;
-            parameters[139].Value = model.Senmax;
-            parameters[140].Value = model.SenmaxdB;
-            parameters[141].Value = model.senhmin;
-            parameters[142].Value = model.senhmax;
-            parameters[143].Value = model.sendmin;
-            parameters[144].Value = model.sendmax;
-            parameters[145].Value = model.老化前min;
-            parameters[146].Value = model.老化前minBFB;
-            parameters[147].Value = model.老化前max;
-            parameters[148].Value = model.老化前maxBFB;
-            parameters[149].Value = model.前后对比min;
-            parameters[150].Value = model.前后对比max;
-            parameters[151].Value = model.上传时间;
-            parameters[152].Value = model.审核时间;
-            parameters[153].Value = model.备注;
+            parameters[106].Value = model.qpominBFB;
+            parameters[107].Value = model.qpomax;
+            parameters[108].Value = model.qpomaxBFB;
+            parameters[109].Value = model.qhpomin;
+            parameters[110].Value = model.qhpomax;
+            parameters[111].Value = model.PTλc;
+            parameters[112].Value = model.PT方法;
+            parameters[113].Value = model.APT_PT;
+            parameters[114].Value = model.码型;
+            parameters[115].Value = model.速率;
+            parameters[116].Value = model.Sen;
+            parameters[117].Value = model.通时间;
+            parameters[118].Value = model.误码率;
+            parameters[119].Value = model.Vbr34;
+            parameters[120].Value = model.Vbrmin;
+            parameters[121].Value = model.Vbrmax;
+            parameters[122].Value = model.Vbrhmin;
+            parameters[123].Value = model.Vbrhmax;
+            parameters[124].Value = model.Vbrdmin;
+            parameters[125].Value = model.Vbrdmax;
+            parameters[126].Value = model.Iccmin;
+            parameters[127].Value = model.Iccmax;
+            parameters[128].Value = model.Icchmin;
+            parameters[129].Value = model.Icchmax;
+            parameters[130].Value = model.Iccdmin;
+            parameters[131].Value = model.Iccdmax;
+            parameters[132].Value = model.Iopmin;
+            parameters[133].Value = model.IopminBFB;
+            parameters[134].Value = model.Iopmax;
+            parameters[135].Value = model.Iomin;
+            parameters[136].Value = model.IominBFB;
+            parameters[137].Value = model.Iomax;
+            parameters[138].Value = model.Idmin;
+            parameters[139].Value = model.Idmax;
+            parameters[140].Value = model.Senmin;
+            parameters[141].Value = model.Senmax;
+            parameters[142].Value = model.SenmaxdB;
+            parameters[143].Value = model.senhmin;
+            parameters[144].Value = model.senhmax;
+            parameters[145].Value = model.sendmin;
+            parameters[146].Value = model.sendmax;
+            parameters[147].Value = model.上传时间;
+            parameters[148].Value = model.审核时间;
+            parameters[149].Value = model.备注;
 
             int rows = dbhelper1.ExecuteSql(strSql.ToString(), parameters);
 
@@ -482,7 +474,9 @@ namespace DAL
             strSql.Append("Txiddmin=@Txiddmin,");
             strSql.Append("Txiddmax=@Txiddmax,");
             strSql.Append("qpomin=@qpomin,");
+            strSql.Append("qpominBFB=@qpominBFB,");
             strSql.Append("qpomax=@qpomax,");
+            strSql.Append("qpomaxBFB=@qpomaxBFB,");
             strSql.Append("qhpomin=@qhpomin,");
             strSql.Append("qhpomax=@qhpomax,");
             strSql.Append("PTλc=@PTλc,");
@@ -521,12 +515,6 @@ namespace DAL
             strSql.Append("senhmax=@senhmax,");
             strSql.Append("sendmin=@sendmin,");
             strSql.Append("sendmax=@sendmax,");
-            strSql.Append("老化前min=@老化前min,");
-            strSql.Append("老化前minBFB=@老化前minBFB,");
-            strSql.Append("老化前max=@老化前max,");
-            strSql.Append("老化前maxBFB=@老化前maxBFB,");
-            strSql.Append("前后对比min=@前后对比min,");
-            strSql.Append("前后对比max=@前后对比max,");
             strSql.Append("上传时间=@上传时间,");
             strSql.Append("审核时间=@审核时间,");
             strSql.Append("备注=@备注");
@@ -637,7 +625,9 @@ namespace DAL
 					new SqlParameter("@Txiddmin", SqlDbType.Float,8),
 					new SqlParameter("@Txiddmax", SqlDbType.Float,8),
 					new SqlParameter("@qpomin", SqlDbType.Float,8),
+					new SqlParameter("@qpominBFB", SqlDbType.Int,4),
 					new SqlParameter("@qpomax", SqlDbType.Float,8),
+					new SqlParameter("@qpomaxBFB", SqlDbType.Int,4),
 					new SqlParameter("@qhpomin", SqlDbType.Float,8),
 					new SqlParameter("@qhpomax", SqlDbType.Float,8),
 					new SqlParameter("@PTλc", SqlDbType.NVarChar,10),
@@ -676,12 +666,6 @@ namespace DAL
 					new SqlParameter("@senhmax", SqlDbType.Float,8),
 					new SqlParameter("@sendmin", SqlDbType.Float,8),
 					new SqlParameter("@sendmax", SqlDbType.Float,8),
-					new SqlParameter("@老化前min", SqlDbType.Float,8),
-					new SqlParameter("@老化前minBFB", SqlDbType.Int,4),
-					new SqlParameter("@老化前max", SqlDbType.Float,8),
-					new SqlParameter("@老化前maxBFB", SqlDbType.Int,4),
-					new SqlParameter("@前后对比min", SqlDbType.Float,8),
-					new SqlParameter("@前后对比max", SqlDbType.Float,8),
 					new SqlParameter("@上传时间", SqlDbType.DateTime),
 					new SqlParameter("@审核时间", SqlDbType.DateTime),
 					new SqlParameter("@备注", SqlDbType.NVarChar,50),
@@ -791,55 +775,51 @@ namespace DAL
             parameters[102].Value = model.Txiddmin;
             parameters[103].Value = model.Txiddmax;
             parameters[104].Value = model.qpomin;
-            parameters[105].Value = model.qpomax;
-            parameters[106].Value = model.qhpomin;
-            parameters[107].Value = model.qhpomax;
-            parameters[108].Value = model.PTλc;
-            parameters[109].Value = model.PT方法;
-            parameters[110].Value = model.APT_PT;
-            parameters[111].Value = model.码型;
-            parameters[112].Value = model.速率;
-            parameters[113].Value = model.Sen;
-            parameters[114].Value = model.通时间;
-            parameters[115].Value = model.误码率;
-            parameters[116].Value = model.Vbr34;
-            parameters[117].Value = model.Vbrmin;
-            parameters[118].Value = model.Vbrmax;
-            parameters[119].Value = model.Vbrhmin;
-            parameters[120].Value = model.Vbrhmax;
-            parameters[121].Value = model.Vbrdmin;
-            parameters[122].Value = model.Vbrdmax;
-            parameters[123].Value = model.Iccmin;
-            parameters[124].Value = model.Iccmax;
-            parameters[125].Value = model.Icchmin;
-            parameters[126].Value = model.Icchmax;
-            parameters[127].Value = model.Iccdmin;
-            parameters[128].Value = model.Iccdmax;
-            parameters[129].Value = model.Iopmin;
-            parameters[130].Value = model.IopminBFB;
-            parameters[131].Value = model.Iopmax;
-            parameters[132].Value = model.Iomin;
-            parameters[133].Value = model.IominBFB;
-            parameters[134].Value = model.Iomax;
-            parameters[135].Value = model.Idmin;
-            parameters[136].Value = model.Idmax;
-            parameters[137].Value = model.Senmin;
-            parameters[138].Value = model.Senmax;
-            parameters[139].Value = model.SenmaxdB;
-            parameters[140].Value = model.senhmin;
-            parameters[141].Value = model.senhmax;
-            parameters[142].Value = model.sendmin;
-            parameters[143].Value = model.sendmax;
-            parameters[144].Value = model.老化前min;
-            parameters[145].Value = model.老化前minBFB;
-            parameters[146].Value = model.老化前max;
-            parameters[147].Value = model.老化前maxBFB;
-            parameters[148].Value = model.前后对比min;
-            parameters[149].Value = model.前后对比max;
-            parameters[150].Value = model.上传时间;
-            parameters[151].Value = model.审核时间;
-            parameters[152].Value = model.备注;
-            parameters[153].Value = model.规格书;
+            parameters[105].Value = model.qpominBFB;
+            parameters[106].Value = model.qpomax;
+            parameters[107].Value = model.qpomaxBFB;
+            parameters[108].Value = model.qhpomin;
+            parameters[109].Value = model.qhpomax;
+            parameters[110].Value = model.PTλc;
+            parameters[111].Value = model.PT方法;
+            parameters[112].Value = model.APT_PT;
+            parameters[113].Value = model.码型;
+            parameters[114].Value = model.速率;
+            parameters[115].Value = model.Sen;
+            parameters[116].Value = model.通时间;
+            parameters[117].Value = model.误码率;
+            parameters[118].Value = model.Vbr34;
+            parameters[119].Value = model.Vbrmin;
+            parameters[120].Value = model.Vbrmax;
+            parameters[121].Value = model.Vbrhmin;
+            parameters[122].Value = model.Vbrhmax;
+            parameters[123].Value = model.Vbrdmin;
+            parameters[124].Value = model.Vbrdmax;
+            parameters[125].Value = model.Iccmin;
+            parameters[126].Value = model.Iccmax;
+            parameters[127].Value = model.Icchmin;
+            parameters[128].Value = model.Icchmax;
+            parameters[129].Value = model.Iccdmin;
+            parameters[130].Value = model.Iccdmax;
+            parameters[131].Value = model.Iopmin;
+            parameters[132].Value = model.IopminBFB;
+            parameters[133].Value = model.Iopmax;
+            parameters[134].Value = model.Iomin;
+            parameters[135].Value = model.IominBFB;
+            parameters[136].Value = model.Iomax;
+            parameters[137].Value = model.Idmin;
+            parameters[138].Value = model.Idmax;
+            parameters[139].Value = model.Senmin;
+            parameters[140].Value = model.Senmax;
+            parameters[141].Value = model.SenmaxdB;
+            parameters[142].Value = model.senhmin;
+            parameters[143].Value = model.senhmax;
+            parameters[144].Value = model.sendmin;
+            parameters[145].Value = model.sendmax;
+            parameters[146].Value = model.上传时间;
+            parameters[147].Value = model.审核时间;
+            parameters[148].Value = model.备注;
+            parameters[149].Value = model.规格书;
 
             int rows = dbhelper1.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)
@@ -861,7 +841,7 @@ namespace DAL
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select  top 1 规格书,产品型号,成品编码,客户代码,LDλc,LD方法,Tc_d,Tc_c,Tc_h,Po,Pomin,PominBFB,Pomax,PomaxBFB,Pohmin,Pohmax,Podmin,Podmax,Ithmin,Ithmax,Ithhmin,Ithhmax,Ithdmin,Ithdmax,Ifmin,Ifmax,Ifhmin,Ifhmax,Ifdmin,Ifdmax,Ifc,Ifh,Ifd,Vfmin,Vfmax,Vfhmin,Vfhmax,Vfdmax,Vfdmin,Imomin,ImominBFB,Imomax,ImomaxBFB,Imohmin,Imohmax,Imodmin,Imodmax,Esmin,EsminBFB,Esmax,EsmaxBFB,Eshmin,Eshmax,Esdmin,Esdmax,Rsmin,Rsmax,Rshmin,Rshmax,Rsdmin,Rsdmax,TEdmin,TEdmax,TEhmin,TEhmax,LDλcmin,LDλcmax,LDλchmin,LDλchmax,LDλcdmin,LDλcdmax,LDλmin,LDλmax,LDλhmin,LDλhmax,LDλdmin,LDλdmax,Srmsmin,Srmsmax,Srmshmin,Srmshmax,Srmsdmin,Srmsdmax,Pkinkmin,Pkinkmax,Pkinkhmin,Pkinkhmax,Pkinkdmin,Pkinkdmax,Kimomin,Kimomax,Kimohmin,Kimohmax,Kimodmin,Kimodmax,ImoKinkmin,ImoKinkmax,Idarkmin,Idarkmax,Txidmin,Txidmax,Txidhmin,Txidhmax,Txiddmin,Txiddmax,qpomin,qpomax,qhpomin,qhpomax,PTλc,PT方法,APT_PT,码型,速率,Sen,通时间,误码率,Vbr34,Vbrmin,Vbrmax,Vbrhmin,Vbrhmax,Vbrdmin,Vbrdmax,Iccmin,Iccmax,Icchmin,Icchmax,Iccdmin,Iccdmax,Iopmin,IopminBFB,Iopmax,Iomin,IominBFB,Iomax,Idmin,Idmax,Senmin,Senmax,SenmaxdB,senhmin,senhmax,sendmin,sendmax,老化前min,老化前minBFB,老化前max,老化前maxBFB,前后对比min,前后对比max,上传时间,审核时间,备注 from tsuhan_spec ");
+            strSql.Append("select  top 1 规格书,产品型号,成品编码,客户代码,LDλc,LD方法,Tc_d,Tc_c,Tc_h,Po,Pomin,PominBFB,Pomax,PomaxBFB,Pohmin,Pohmax,Podmin,Podmax,Ithmin,Ithmax,Ithhmin,Ithhmax,Ithdmin,Ithdmax,Ifmin,Ifmax,Ifhmin,Ifhmax,Ifdmin,Ifdmax,Ifc,Ifh,Ifd,Vfmin,Vfmax,Vfhmin,Vfhmax,Vfdmax,Vfdmin,Imomin,ImominBFB,Imomax,ImomaxBFB,Imohmin,Imohmax,Imodmin,Imodmax,Esmin,EsminBFB,Esmax,EsmaxBFB,Eshmin,Eshmax,Esdmin,Esdmax,Rsmin,Rsmax,Rshmin,Rshmax,Rsdmin,Rsdmax,TEdmin,TEdmax,TEhmin,TEhmax,LDλcmin,LDλcmax,LDλchmin,LDλchmax,LDλcdmin,LDλcdmax,LDλmin,LDλmax,LDλhmin,LDλhmax,LDλdmin,LDλdmax,Srmsmin,Srmsmax,Srmshmin,Srmshmax,Srmsdmin,Srmsdmax,Pkinkmin,Pkinkmax,Pkinkhmin,Pkinkhmax,Pkinkdmin,Pkinkdmax,Kimomin,Kimomax,Kimohmin,Kimohmax,Kimodmin,Kimodmax,ImoKinkmin,ImoKinkmax,Idarkmin,Idarkmax,Txidmin,Txidmax,Txidhmin,Txidhmax,Txiddmin,Txiddmax,qpomin,qpominBFB,qpomax,qpomaxBFB,qhpomin,qhpomax,PTλc,PT方法,APT_PT,码型,速率,Sen,通时间,误码率,Vbr34,Vbrmin,Vbrmax,Vbrhmin,Vbrhmax,Vbrdmin,Vbrdmax,Iccmin,Iccmax,Icchmin,Icchmax,Iccdmin,Iccdmax,Iopmin,IopminBFB,Iopmax,Iomin,IominBFB,Iomax,Idmin,Idmax,Senmin,Senmax,SenmaxdB,senhmin,senhmax,sendmin,sendmax,上传时间,审核时间,备注 from tsuhan_spec ");
             strSql.Append(" where 规格书=@规格书 ");
             SqlParameter[] parameters = {
 					new SqlParameter("@规格书", SqlDbType.NVarChar,15)			};
@@ -1311,9 +1291,17 @@ namespace DAL
                 {
                     model.qpomin = decimal.Parse(row["qpomin"].ToString());
                 }
+                if (row["qpominBFB"] != null && row["qpominBFB"].ToString() != "")
+                {
+                    model.qpominBFB = int.Parse(row["qpominBFB"].ToString());
+                }
                 if (row["qpomax"] != null && row["qpomax"].ToString() != "")
                 {
                     model.qpomax = decimal.Parse(row["qpomax"].ToString());
+                }
+                if (row["qpomaxBFB"] != null && row["qpomaxBFB"].ToString() != "")
+                {
+                    model.qpomaxBFB = int.Parse(row["qpomaxBFB"].ToString());
                 }
                 if (row["qhpomin"] != null && row["qhpomin"].ToString() != "")
                 {
@@ -1466,30 +1454,6 @@ namespace DAL
                 if (row["sendmax"] != null && row["sendmax"].ToString() != "")
                 {
                     model.sendmax = decimal.Parse(row["sendmax"].ToString());
-                }
-                if (row["老化前min"] != null && row["老化前min"].ToString() != "")
-                {
-                    model.老化前min = decimal.Parse(row["老化前min"].ToString());
-                }
-                if (row["老化前minBFB"] != null && row["老化前minBFB"].ToString() != "")
-                {
-                    model.老化前minBFB = int.Parse(row["老化前minBFB"].ToString());
-                }
-                if (row["老化前max"] != null && row["老化前max"].ToString() != "")
-                {
-                    model.老化前max = decimal.Parse(row["老化前max"].ToString());
-                }
-                if (row["老化前maxBFB"] != null && row["老化前maxBFB"].ToString() != "")
-                {
-                    model.老化前maxBFB = int.Parse(row["老化前maxBFB"].ToString());
-                }
-                if (row["前后对比min"] != null && row["前后对比min"].ToString() != "")
-                {
-                    model.前后对比min = decimal.Parse(row["前后对比min"].ToString());
-                }
-                if (row["前后对比max"] != null && row["前后对比max"].ToString() != "")
-                {
-                    model.前后对比max = decimal.Parse(row["前后对比max"].ToString());
                 }
                 if (row["上传时间"] != null && row["上传时间"].ToString() != "")
                 {

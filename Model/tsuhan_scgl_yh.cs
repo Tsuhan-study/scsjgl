@@ -20,7 +20,7 @@ namespace Maticsoft.Model
         private string _批注;
         private string _介绍人;
         private string _指纹登记号码;
-        private int _工号;
+        private string _工号;
         private string _姓名;
         private string _学历;
         private string _专业;
@@ -60,7 +60,7 @@ namespace Maticsoft.Model
         private string _在职状态;
         private string _邮箱;
         private string _内部小号;
-        private int? _密码;
+        private string _密码;
         private string _ab班;
         private string _other1;
         private string _other2;
@@ -123,7 +123,7 @@ namespace Maticsoft.Model
         /// <summary>
         /// 
         /// </summary>
-        public int 工号
+        public string 工号
         {
             set { _工号 = value; }
             get { return _工号; }
@@ -443,7 +443,7 @@ namespace Maticsoft.Model
         /// <summary>
         /// 
         /// </summary>
-        public int? 密码
+        public string 密码
         {
             set { _密码 = value; }
             get { return _密码; }

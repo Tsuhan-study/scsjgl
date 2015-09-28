@@ -51,9 +51,9 @@ namespace scsjgl
             this.tbDXH1.BackColor = Color.LightGray;
             this.btnSend.Enabled = false;
             this.btnSend.BackColor = Color.LightGray;
-            var name = Convert.ToInt32(gh);
+            //var name = Convert.ToInt32(gh);
            // this.btnUpdate.Enabled = false;
-            tsuhan_scgl_yh yh = yhbll.GetModel(name);
+            tsuhan_scgl_yh yh = yhbll.GetModel(gh);
             this.btnOk.Enabled = false;
             this.btnSend.Enabled = false;
             this.btnUpdate.Enabled = false;
@@ -113,7 +113,7 @@ namespace scsjgl
                     this.textBox47.Text = bhd.JK_name;
                     this.textBox46.Text = bhd.JK_sjdh;
 
-                    this.tabControl1.Enabled = true;
+                    //this.tabControl1.Enabled = true;
                 }
                 else
                 {
@@ -158,8 +158,8 @@ namespace scsjgl
         /// <param name="e"></param>
         private void tbDXH1_MouseLeave(object sender, EventArgs e)
         {
-            var name = Convert.ToInt32(gh);
-            tsuhan_scgl_yh yh = yhbll.GetModel(name);
+            //var name = Convert.ToInt32(gh);
+            tsuhan_scgl_yh yh = yhbll.GetModel(gh);
             var dxuhao = this.tbSGDXH.Text + this.tbDXH1.Text;
             var str = dxuhao.Substring(dxuhao.Length - 1, 1);
 
@@ -3969,7 +3969,7 @@ namespace scsjgl
             string regs = @"^(((((1[6-9]|[2-9]\d)\d{2})-(0?[13578]|1[02])-(0?[1-9]|[12]\d|3[01]))|(((1[6-9]|[2-9]\d)\d{2})-(0?[13456789]|1[012])-(0?[1-9]|[12]\d|30))|(((1[6-9]|[2-9]\d)\d{2})-0?2-(0?[1-9]|1\d|2[0-8]))|(((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))-0?2-29-)) (20|21|22|23|[0-1]?\d):[0-5]?\d:[0-5]?\d)$";
             
             var name =Convert.ToInt32(gh);
-            tsuhan_scgl_yh yh = yhbll.GetModel(name);
+            tsuhan_scgl_yh yh = yhbll.GetModel(gh);
             tsuhan_sg_tx bhd = new tsuhan_sg_tx();
             var sgdxh = this.tbSGDXH.Text + this.tbDXH1.Text;
             bhd.随工单号 = sgdxh;
@@ -5029,7 +5029,7 @@ namespace scsjgl
             string reg = @"^((((1[6-9]|[2-9]\d)\d{2})-(0?[13578]|1[02])-(0?[1-9]|[12]\d|3[01]))|(((1[6-9]|[2-9]\d)\d{2})-(0?[13456789]|1[012])-(0?[1-9]|[12]\d|30))|(((1[6-9]|[2-9]\d)\d{2})-0?2-(0?[1-9]|1\d|2[0-8]))|(((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))-0?2-29-))$";
             string regs =@"^(((((1[6-9]|[2-9]\d)\d{2})-(0?[13578]|1[02])-(0?[1-9]|[12]\d|3[01]))|(((1[6-9]|[2-9]\d)\d{2})-(0?[13456789]|1[012])-(0?[1-9]|[12]\d|30))|(((1[6-9]|[2-9]\d)\d{2})-0?2-(0?[1-9]|1\d|2[0-8]))|(((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))-0?2-29-)) (20|21|22|23|[0-1]?\d):[0-5]?\d:[0-5]?\d)$";
             var name =Convert.ToInt32(gh);
-            tsuhan_scgl_yh yh = yhbll.GetModel(name);
+            tsuhan_scgl_yh yh = yhbll.GetModel(gh);
             var sgdh1 = this.tbSGDXH.Text + this.tbDXH1.Text;
             var str1 = sgdh1.Substring(sgdh1.Length - 1, 1);
             #region 判断不合格数量是否正确
@@ -6371,8 +6371,8 @@ namespace scsjgl
 
         private void dtpqcTime1_MouseLeave(object sender, EventArgs e)
         {
-            var name = Convert.ToInt32(gh);;
-            tsuhan_scgl_yh yh = yhbll.GetModel(name);
+            //var name = Convert.ToInt32(gh);;
+            tsuhan_scgl_yh yh = yhbll.GetModel(gh);
             tsuhan_sg_tx gt = txbll.GetAllTx();
             //if (yh.机构=="全部")
             //{
@@ -6450,15 +6450,15 @@ namespace scsjgl
         private void tbczy1_MouseUp(object sender, MouseEventArgs e)
         {
             tsuhan_sg_tx bhd = new tsuhan_sg_tx();
-            var name = Convert.ToInt32(gh);
-            tsuhan_scgl_yh yh = yhbll.GetModel(name);
+            //var name = Convert.ToInt32(gh);
+            tsuhan_scgl_yh yh = yhbll.GetModel(gh);
 
             if (this.tabControl1.SelectedTab == tabPage1)
             {
                 #region 备料
                 bhd.bl_czy1 = this.tbczy1.Text;
                 bool result1;
-                result1 = yhbll.Exist(Convert.ToInt32(this.tbczy1.Text));
+                result1 = yhbll.Exist(this.tbczy1.Text);
                 if (this.tbczy1.Text == "")
                 {
                     this.tbczy1.Text = "0";
@@ -6471,7 +6471,7 @@ namespace scsjgl
                 }
                 else
                 {
-                    var yh1 = yhbll.GetModel(Convert.ToInt32(this.tbczy1.Text));
+                    var yh1 = yhbll.GetModel(this.tbczy1.Text);
                     this.tbczName1.Text = yh1.姓名;
                     bhd.bl_czyname1 = this.tbczName1.Text;
 
@@ -6483,7 +6483,7 @@ namespace scsjgl
                 #region LD耦合焊接
                 bhd.LD_czy1 = this.tbcz1.Text;
                 bool result1;
-                result1 = yhbll.Exist(Convert.ToInt32(this.tbcz1.Text));
+                result1 = yhbll.Exist(this.tbcz1.Text);
                 if (this.tbcz1.Text == "")
                 {
                     this.tbcz1.Text = "0";
@@ -6496,7 +6496,7 @@ namespace scsjgl
                 }
                 else
                 {
-                    var yh1 = yhbll.GetModel(Convert.ToInt32(this.tbcz1.Text));
+                    var yh1 = yhbll.GetModel(this.tbcz1.Text);
                     this.tbname1.Text = yh1.姓名;
                     bhd.LD_czyname1 = this.tbname1.Text;
 
@@ -6508,7 +6508,7 @@ namespace scsjgl
                 #region PT耦合固化
                 bhd.PT_czy1 = this.tbcz5.Text;
                 bool result1;
-                result1 = yhbll.Exist(Convert.ToInt32(this.tbcz5.Text));
+                result1 = yhbll.Exist(this.tbcz5.Text);
                 if (this.tbcz5.Text == "")
                 {
                     this.tbcz5.Text = "0";
@@ -6521,7 +6521,7 @@ namespace scsjgl
                 }
                 else
                 {
-                    var yh1 = yhbll.GetModel(Convert.ToInt32(this.tbcz5.Text));
+                    var yh1 = yhbll.GetModel(this.tbcz5.Text);
                     this.tbname5.Text = yh1.姓名;
                     bhd.PT_czyname1 = this.tbname5.Text;
 
@@ -6533,7 +6533,7 @@ namespace scsjgl
                 #region 温循前
                 bhd.WXQ_czy = this.tbcz9.Text;
                 bool result1;
-                result1 = yhbll.Exist(Convert.ToInt32(this.tbcz9.Text));
+                result1 = yhbll.Exist(this.tbcz9.Text);
                 if (this.tbcz9.Text == "")
                 {
                     this.tbcz9.Text = "0";
@@ -6546,7 +6546,7 @@ namespace scsjgl
                 }
                 else
                 {
-                    var yh1 = yhbll.GetModel(Convert.ToInt32(this.tbcz9.Text));
+                    var yh1 = yhbll.GetModel(this.tbcz9.Text);
                     this.tbname9.Text = yh1.姓名;
                     bhd.WXQ_czyname = this.tbname9.Text;
 
@@ -6558,7 +6558,7 @@ namespace scsjgl
                 #region 温循后
                 bhd.WXH_czy = this.tbcz10.Text;
                 bool result1;
-                result1 = yhbll.Exist(Convert.ToInt32(this.tbcz10.Text));
+                result1 = yhbll.Exist(this.tbcz10.Text);
 
                 if (this.tbcz10.Text == "")
                 {
@@ -6572,7 +6572,7 @@ namespace scsjgl
                 }
                 else
                 {
-                    var yh1 = yhbll.GetModel(Convert.ToInt32(this.tbcz10.Text));
+                    var yh1 = yhbll.GetModel(this.tbcz10.Text);
                     this.tbname10.Text = yh1.姓名;
                     bhd.WXH_czyname = this.tbname10.Text;
 
@@ -6584,7 +6584,7 @@ namespace scsjgl
                 #region 测试
                 bhd.CS_czy1 = this.tbcz11.Text;
                 bool result1;
-                result1 = yhbll.Exist(Convert.ToInt32(this.tbcz11.Text));
+                result1 = yhbll.Exist(this.tbcz11.Text);
                 if (this.tbcz11.Text == "")
                 {
                     this.tbcz11.Text = "0";
@@ -6597,7 +6597,7 @@ namespace scsjgl
                 }
                 else
                 {
-                    var yh1 = yhbll.GetModel(Convert.ToInt32(this.tbcz11.Text));
+                    var yh1 = yhbll.GetModel(this.tbcz11.Text);
                     this.tbname11.Text = yh1.姓名;
                     bhd.CS_czyname1 = this.tbname11.Text;
                 }
@@ -6608,7 +6608,7 @@ namespace scsjgl
                 #region 清洗
                 bhd.QX_czy1 = this.tbcz15.Text;
                 bool result1;
-                result1 = yhbll.Exist(Convert.ToInt32(this.tbcz15.Text));
+                result1 = yhbll.Exist(this.tbcz15.Text);
                 if (this.tbcz15.Text == "")
                 {
                     this.tbcz15.Text = "0";
@@ -6621,7 +6621,7 @@ namespace scsjgl
                 }
                 else
                 {
-                    var yh1 = yhbll.GetModel(Convert.ToInt32(this.tbcz15.Text));
+                    var yh1 = yhbll.GetModel(this.tbcz15.Text);
                     this.tbname15.Text = yh1.姓名;
                     bhd.QX_czyname1 = this.tbname15.Text;
                 }
@@ -6632,7 +6632,7 @@ namespace scsjgl
                 #region 包装
                 bhd.BZ_czy1 = this.tbcz19.Text;
                 bool result1;
-                result1 = yhbll.Exist(Convert.ToInt32(this.tbcz19.Text));
+                result1 = yhbll.Exist(this.tbcz19.Text);
                 if (this.tbcz19.Text == "")
                 {
                     this.tbcz19.Text = "0";
@@ -6645,7 +6645,7 @@ namespace scsjgl
                 }
                 else
                 {
-                    var yh1 = yhbll.GetModel(Convert.ToInt32(this.tbcz19.Text));
+                    var yh1 = yhbll.GetModel(this.tbcz19.Text);
                     this.tbname19.Text = yh1.姓名;
                     bhd.BZ_czyname1 = this.tbname19.Text;
                 }
@@ -7465,8 +7465,8 @@ namespace scsjgl
         private void tbczy2_MouseUp(object sender, MouseEventArgs e)
         {
             tsuhan_sg_tx bhd = new tsuhan_sg_tx();
-            var name = Convert.ToInt32(gh);;
-            tsuhan_scgl_yh yh = yhbll.GetModel(name);
+            //var name = Convert.ToInt32(gh);;
+            tsuhan_scgl_yh yh = yhbll.GetModel(gh);
             //if (yh.机构 == "全部")
             //{
                 if (this.tabControl1.SelectedTab == tabPage1)
@@ -7475,7 +7475,7 @@ namespace scsjgl
                     #region 备料
                     bhd.bl_czy2 = this.tbczy2.Text;
                     bool result2;
-                    result2 = yhbll.Exist(Convert.ToInt32(this.tbczy2.Text));
+                    result2 = yhbll.Exist(this.tbczy2.Text);
 
                     if (this.tbczy2.Text == "")
                     {
@@ -7489,7 +7489,7 @@ namespace scsjgl
                     }
                     else
                     {
-                        var yh2 = yhbll.GetModel(Convert.ToInt32(this.tbczy2.Text));
+                        var yh2 = yhbll.GetModel(this.tbczy2.Text);
                         this.tbczName2.Text = yh2.姓名;
                         bhd.bl_czyname2 = this.tbczName2.Text;
 
@@ -7501,7 +7501,7 @@ namespace scsjgl
                     #region LD耦合焊接
                     bhd.LD_czy2 = this.tbcz2.Text;
                     bool result2;
-                    result2 = yhbll.Exist(Convert.ToInt32(this.tbcz2.Text));
+                    result2 = yhbll.Exist(this.tbcz2.Text);
 
                     if (this.tbcz2.Text == "")
                     {
@@ -7514,7 +7514,7 @@ namespace scsjgl
                     }
                     else
                     {
-                        var yh2 = yhbll.GetModel(Convert.ToInt32(this.tbcz2.Text));
+                        var yh2 = yhbll.GetModel(this.tbcz2.Text);
                         this.tbname2.Text = yh2.姓名;
                         bhd.LD_czyname1 = this.tbname1.Text;
 
@@ -7526,7 +7526,7 @@ namespace scsjgl
                     #region PT耦合固化
                     bhd.PT_czy2 = this.tbcz6.Text;
                     bool result2;
-                    result2 = yhbll.Exist(Convert.ToInt32(this.tbcz6.Text));
+                    result2 = yhbll.Exist(this.tbcz6.Text);
 
                     if (this.tbcz6.Text == "")
                     {
@@ -7540,7 +7540,7 @@ namespace scsjgl
                     }
                     else
                     {
-                        var yh2 = yhbll.GetModel(Convert.ToInt32(this.tbcz6.Text));
+                        var yh2 = yhbll.GetModel(this.tbcz6.Text);
                         this.tbname6.Text = yh2.姓名;
                         bhd.PT_czyname2 = this.tbname6.Text;
 
@@ -7553,7 +7553,7 @@ namespace scsjgl
                     #region 测试
                     bhd.CS_czy2 = this.tbcz12.Text;
                     bool result2;
-                    result2 = yhbll.Exist(Convert.ToInt32(this.tbcz12.Text));
+                    result2 = yhbll.Exist(this.tbcz12.Text);
 
                     if (this.tbcz12.Text == "")
                     {
@@ -7567,7 +7567,7 @@ namespace scsjgl
                     }
                     else
                     {
-                        var yh2 = yhbll.GetModel(Convert.ToInt32(this.tbcz12.Text));
+                        var yh2 = yhbll.GetModel(this.tbcz12.Text);
                         this.tbname12.Text = yh2.姓名;
                         bhd.CS_czyname2 = this.tbname12.Text;
                     }
@@ -7578,7 +7578,7 @@ namespace scsjgl
                     #region 清洗
                     bhd.QX_czy2 = this.tbcz16.Text;
                     bool result2;
-                    result2 = yhbll.Exist(Convert.ToInt32(this.tbcz16.Text));
+                    result2 = yhbll.Exist(this.tbcz16.Text);
                     if (this.tbcz16.Text == "")
                     {
                         this.tbcz16.Text = "0";
@@ -7591,7 +7591,7 @@ namespace scsjgl
                     }
                     else
                     {
-                        var yh2 = yhbll.GetModel(Convert.ToInt32(this.tbcz16.Text));
+                        var yh2 = yhbll.GetModel(this.tbcz16.Text);
                         this.tbname16.Text = yh2.姓名;
                         bhd.QX_czyname2 = this.tbname16.Text;
                     }
@@ -7602,7 +7602,7 @@ namespace scsjgl
                     #region 包装
                     bhd.BZ_czy2 = this.tbcz20.Text;
                     bool result2;
-                    result2 = yhbll.Exist(Convert.ToInt32(this.tbcz20.Text));
+                    result2 = yhbll.Exist(this.tbcz20.Text);
 
                     if (this.tbcz20.Text == "")
                     {
@@ -7616,7 +7616,7 @@ namespace scsjgl
                     }
                     else
                     {
-                        var yh2 = yhbll.GetModel(Convert.ToInt32(this.tbcz20.Text));
+                        var yh2 = yhbll.GetModel(this.tbcz20.Text);
                         this.tbname20.Text = yh2.姓名;
                         bhd.BZ_czyname2 = this.tbname20.Text;
                     }
@@ -7784,8 +7784,8 @@ namespace scsjgl
         private void tbczy3_MouseUp(object sender, MouseEventArgs e)
         {
             tsuhan_sg_tx bhd = new tsuhan_sg_tx();
-            var name = Convert.ToInt32(gh);
-            tsuhan_scgl_yh yh = yhbll.GetModel(name);
+            //var name = Convert.ToInt32(gh);
+            tsuhan_scgl_yh yh = yhbll.GetModel(gh);
             //if (yh.机构 == "全部")
             //{
                 if (this.tabControl1.SelectedTab == tabPage1)
@@ -7793,7 +7793,7 @@ namespace scsjgl
                     #region 备料
                     bhd.bl_czy3 = this.tbczy3.Text;
                     bool result3;
-                    result3 = yhbll.Exist(Convert.ToInt32(this.tbczy3.Text));
+                    result3 = yhbll.Exist(this.tbczy3.Text);
 
                     if (this.tbczy3.Text == "")
                     {
@@ -7807,7 +7807,7 @@ namespace scsjgl
                     }
                     else
                     {
-                        var yh3 = yhbll.GetModel(Convert.ToInt32(this.tbczy3.Text));
+                        var yh3 = yhbll.GetModel(this.tbczy3.Text);
                         this.tbczName3.Text = yh3.姓名;
                         bhd.bl_czyname3 = this.tbczName3.Text;
 
@@ -7819,7 +7819,7 @@ namespace scsjgl
                     #region LD耦合焊接
                     bhd.LD_czy3 = this.tbcz3.Text;
                     bool result3;
-                    result3 = yhbll.Exist(Convert.ToInt32(this.tbcz3.Text));
+                    result3 = yhbll.Exist(this.tbcz3.Text);
 
                     if (this.tbcz3.Text == "")
                     {
@@ -7833,7 +7833,7 @@ namespace scsjgl
                     }
                     else
                     {
-                        var yh3 = yhbll.GetModel(Convert.ToInt32(this.tbcz3.Text));
+                        var yh3 = yhbll.GetModel(this.tbcz3.Text);
                         this.tbname3.Text = yh3.姓名;
                         bhd.LD_czyname2 = this.tbname2.Text;
 
@@ -7845,7 +7845,7 @@ namespace scsjgl
                     #region PT耦合固化
                     bhd.PT_czy3 = this.tbcz7.Text;
                     bool result3;
-                    result3 = yhbll.Exist(Convert.ToInt32(this.tbcz7.Text));
+                    result3 = yhbll.Exist(this.tbcz7.Text);
 
                     if (this.tbcz7.Text == "")
                     {
@@ -7859,7 +7859,7 @@ namespace scsjgl
                     }
                     else
                     {
-                        var yh3 = yhbll.GetModel(Convert.ToInt32(this.tbcz7.Text));
+                        var yh3 = yhbll.GetModel(this.tbcz7.Text);
                         this.tbname7.Text = yh3.姓名;
                         bhd.PT_czyname3 = this.tbname7.Text;
 
@@ -7871,7 +7871,7 @@ namespace scsjgl
                     #region 测试
                     bhd.CS_czy3 = this.tbcz13.Text;
                     bool result3;
-                    result3 = yhbll.Exist(Convert.ToInt32(this.tbcz13.Text));
+                    result3 = yhbll.Exist(this.tbcz13.Text);
 
                     if (this.tbcz13.Text == "")
                     {
@@ -7885,7 +7885,7 @@ namespace scsjgl
                     }
                     else
                     {
-                        var yh3 = yhbll.GetModel(Convert.ToInt32(this.tbcz13.Text));
+                        var yh3 = yhbll.GetModel(this.tbcz13.Text);
                         this.tbname13.Text = yh3.姓名;
                         bhd.CS_czyname3 = this.tbname13.Text;
                     }
@@ -7897,7 +7897,7 @@ namespace scsjgl
                     #region 清洗
                     bhd.QX_czy3 = this.tbcz17.Text;
                     bool result3;
-                    result3 = yhbll.Exist(Convert.ToInt32(this.tbcz17.Text));
+                    result3 = yhbll.Exist(this.tbcz17.Text);
 
                     if (this.tbcz17.Text == "")
                     {
@@ -7911,7 +7911,7 @@ namespace scsjgl
                     }
                     else
                     {
-                        var yh3 = yhbll.GetModel(Convert.ToInt32(this.tbcz17.Text));
+                        var yh3 = yhbll.GetModel(this.tbcz17.Text);
                         this.tbname17.Text = yh3.姓名;
                         bhd.QX_czyname3 = this.tbname17.Text;
                     }
@@ -7922,7 +7922,7 @@ namespace scsjgl
                     #region 包装
                     bhd.BZ_czy2 = this.tbcz21.Text;
                     bool result2;
-                    result2 = yhbll.Exist(Convert.ToInt32(this.tbcz21.Text));
+                    result2 = yhbll.Exist(this.tbcz21.Text);
 
                     if (this.tbcz21.Text == "")
                     {
@@ -7936,7 +7936,7 @@ namespace scsjgl
                     }
                     else
                     {
-                        var yh2 = yhbll.GetModel(Convert.ToInt32(this.tbcz21.Text));
+                        var yh2 = yhbll.GetModel(this.tbcz21.Text);
                         this.tbname21.Text = yh2.姓名;
                         bhd.BZ_czyname2 = this.tbname21.Text;
                     }
@@ -8106,7 +8106,7 @@ namespace scsjgl
 
             tsuhan_sg_tx bhd = new tsuhan_sg_tx();
             var name =Convert.ToInt32(gh);
-            tsuhan_scgl_yh yh = yhbll.GetModel(name);
+            tsuhan_scgl_yh yh = yhbll.GetModel(gh);
             //if (yh.机构 == "全部")
             //{
                 if (this.tabControl1.SelectedTab == tabPage1)
@@ -8114,7 +8114,7 @@ namespace scsjgl
                     #region 备料
                     bhd.bl_czy4 = this.tbczy4.Text;
                     bool result4;
-                    var t = Convert.ToInt32(this.tbczy4.Text);
+                    var t = this.tbczy4.Text;
                     result4 = yhbll.Exist(t);
                     if (this.tbczy4.Text == "")
                     {
@@ -8128,7 +8128,7 @@ namespace scsjgl
                     }
                     else
                     {
-                        var yh4 = yhbll.GetModel(Convert.ToInt32(this.tbczy4.Text));
+                        var yh4 = yhbll.GetModel(this.tbczy4.Text);
                         this.tbczName4.Text = yh4.姓名;
                         bhd.bl_czyname4 = this.tbczName4.Text;
                     }
@@ -8140,7 +8140,7 @@ namespace scsjgl
                     #region LD耦合焊接
                     bhd.LD_czy4 = this.tbcz4.Text;
                     bool result4;
-                    result4 = yhbll.Exist(Convert.ToInt32(this.tbcz4.Text));
+                    result4 = yhbll.Exist(this.tbcz4.Text);
                     if (this.tbcz4.Text == "")
                     {
                         this.tbcz4.Text = "0";
@@ -8153,7 +8153,7 @@ namespace scsjgl
                     }
                     else
                     {
-                        var yh4 = yhbll.GetModel(Convert.ToInt32(this.tbcz4.Text));
+                        var yh4 = yhbll.GetModel(this.tbcz4.Text);
                         this.tbname4.Text = yh4.姓名;
                         bhd.LD_czyname3 = this.tbname3.Text;
                     }
@@ -8164,7 +8164,7 @@ namespace scsjgl
                     #region PT耦合固化
                     bhd.PT_czy4 = this.tbcz8.Text;
                     bool result4;
-                    result4 = yhbll.Exist(Convert.ToInt32(this.tbcz8.Text));
+                    result4 = yhbll.Exist(this.tbcz8.Text);
 
                     if (this.tbcz8.Text == "")
                     {
@@ -8178,7 +8178,7 @@ namespace scsjgl
                     }
                     else
                     {
-                        var yh4 = yhbll.GetModel(Convert.ToInt32(this.tbcz8.Text));
+                        var yh4 = yhbll.GetModel(this.tbcz8.Text);
                         this.tbname8.Text = yh4.姓名;
                         bhd.PT_czyname4 = this.tbname8.Text;
                     }
@@ -8190,7 +8190,7 @@ namespace scsjgl
                     #region 测试
                     bhd.CS_czy4 = this.tbcz14.Text;
                     bool result4;
-                    result4 = yhbll.Exist(Convert.ToInt32(this.tbcz14.Text));
+                    result4 = yhbll.Exist(this.tbcz14.Text);
 
                     if (this.tbcz14.Text == "")
                     {
@@ -8204,7 +8204,7 @@ namespace scsjgl
                     }
                     else
                     {
-                        var yh4 = yhbll.GetModel(Convert.ToInt32(this.tbcz14.Text));
+                        var yh4 = yhbll.GetModel(this.tbcz14.Text);
                         this.tbname14.Text = yh4.姓名;
                         bhd.CS_czyname4 = this.tbname14.Text;
                     }
@@ -8215,7 +8215,7 @@ namespace scsjgl
                     #region 清洗
                     bhd.QX_czy4 = this.tbcz18.Text;
                     bool result4;
-                    result4 = yhbll.Exist(Convert.ToInt32(this.tbcz18.Text));
+                    result4 = yhbll.Exist(this.tbcz18.Text);
 
 
                     if (this.tbcz18.Text == "")
@@ -8230,7 +8230,7 @@ namespace scsjgl
                     }
                     else
                     {
-                        var yh4 = yhbll.GetModel(Convert.ToInt32(this.tbcz18.Text));
+                        var yh4 = yhbll.GetModel(this.tbcz18.Text);
                         this.tbname18.Text = yh4.姓名;
                         bhd.QX_czyname4 = this.tbname18.Text;
                     }
@@ -8241,7 +8241,7 @@ namespace scsjgl
                     #region 包装
                     bhd.BZ_czy4 = this.tbcz22.Text;
                     bool result4;
-                    result4 = yhbll.Exist(Convert.ToInt32(this.tbcz22.Text));
+                    result4 = yhbll.Exist(this.tbcz22.Text);
 
                     if (this.tbcz22.Text == "")
                     {
@@ -8255,7 +8255,7 @@ namespace scsjgl
                     }
                     else
                     {
-                        var yh4 = yhbll.GetModel(Convert.ToInt32(this.tbcz22.Text));
+                        var yh4 = yhbll.GetModel(this.tbcz22.Text);
                         this.tbname22.Text = yh4.姓名;
                         bhd.BZ_czyname4 = this.tbname22.Text;
                     }
@@ -8419,15 +8419,15 @@ namespace scsjgl
         private void tblry_MouseUp(object sender, MouseEventArgs e)
         {
             tsuhan_sg_tx bhd = new tsuhan_sg_tx();
-            var name = Convert.ToInt32(gh);
-            tsuhan_scgl_yh yh = yhbll.GetModel(name);
+            //var name = Convert.ToInt32(gh);
+            tsuhan_scgl_yh yh = yhbll.GetModel(gh);
 
             if (this.tabControl1.SelectedTab == tabPage1)
             {
                 #region 备料
                 bhd.bl_lry = this.tblry.Text;
                 bool result5;
-                result5 = yhbll.Exist(Convert.ToInt32(this.tblry.Text));
+                result5 = yhbll.Exist(this.tblry.Text);
                 if (this.tblry.Text == "")
                 {
                     this.tblry.Text = "0";
@@ -8441,7 +8441,7 @@ namespace scsjgl
                 }
                 else
                 {
-                    var yh5 = yhbll.GetModel(Convert.ToInt32(this.tblry.Text));
+                    var yh5 = yhbll.GetModel(this.tblry.Text);
                     this.tblrName.Text = yh5.姓名;
                     bhd.bl_lry = this.tblrName.Text;
                 }
@@ -8453,7 +8453,7 @@ namespace scsjgl
                 #region LD耦合焊接
                 bhd.LD_lry = this.tblr1.Text;
                 bool result5;
-                result5 = yhbll.Exist(Convert.ToInt32(this.tblr1.Text));
+                result5 = yhbll.Exist(this.tblr1.Text);
                 if (this.tblr1.Text == "")
                 {
                     this.tblr1.Text = "0";
@@ -8465,7 +8465,7 @@ namespace scsjgl
                 }
                 else
                 {
-                    var yh5 = yhbll.GetModel(Convert.ToInt32(this.tblr1.Text));
+                    var yh5 = yhbll.GetModel(this.tblr1.Text);
                     this.tblrname1.Text = yh5.姓名;
                     bhd.LD_lryname = this.tblrname1.Text;
                 }
@@ -8476,7 +8476,7 @@ namespace scsjgl
                 #region PT耦合固化
                 bhd.PT_lry = this.tblr2.Text;
                 bool result5;
-                result5 = yhbll.Exist(Convert.ToInt32(this.tblr2.Text));
+                result5 = yhbll.Exist(this.tblr2.Text);
 
                 if (this.tblr2.Text == "")
                 {
@@ -8490,7 +8490,7 @@ namespace scsjgl
                 }
                 else
                 {
-                    var yh5 = yhbll.GetModel(Convert.ToInt32(this.tblr2.Text));
+                    var yh5 = yhbll.GetModel(this.tblr2.Text);
                     this.tblrname2.Text = yh5.姓名;
                     bhd.PT_lryname = this.tblrname2.Text;
                 }
@@ -8502,7 +8502,7 @@ namespace scsjgl
                 #region 温循前
                 bhd.WXQ_lry = this.tblr3.Text;
                 bool result2;
-                result2 = yhbll.Exist(Convert.ToInt32(this.tblr3.Text));
+                result2 = yhbll.Exist(this.tblr3.Text);
                 if (this.tblr3.Text == "")
                 {
                     this.tblr3.Text = "0";
@@ -8515,7 +8515,7 @@ namespace scsjgl
                 }
                 else
                 {
-                    var yh1 = yhbll.GetModel(Convert.ToInt32(this.tblr3.Text));
+                    var yh1 = yhbll.GetModel(this.tblr3.Text);
                     this.tblrname3.Text = yh1.姓名;
                     bhd.WXQ_lryname = this.tblrname3.Text;
 
@@ -8527,7 +8527,7 @@ namespace scsjgl
                 #region 温循后
                 bhd.WX_Hlry = this.tblr4.Text;
                 bool result2;
-                result2 = yhbll.Exist(Convert.ToInt32(this.tblr4.Text));
+                result2 = yhbll.Exist(this.tblr4.Text);
 
                 if (this.tblr4.Text == "")
                 {
@@ -8541,7 +8541,7 @@ namespace scsjgl
                 }
                 else
                 {
-                    var yh1 = yhbll.GetModel(Convert.ToInt32(this.tblr4.Text));
+                    var yh1 = yhbll.GetModel(this.tblr4.Text);
                     this.tblrname4.Text = yh1.姓名;
                     bhd.WXH_czyname = this.tblrname4.Text;
 
@@ -8553,7 +8553,7 @@ namespace scsjgl
                 #region 测试
                 bhd.CS_lry = this.tblr5.Text;
                 bool result5;
-                result5 = yhbll.Exist(Convert.ToInt32(this.tblr5.Text));
+                result5 = yhbll.Exist(this.tblr5.Text);
 
                 if (this.tblr5.Text == "")
                 {
@@ -8567,7 +8567,7 @@ namespace scsjgl
                 }
                 else
                 {
-                    var yh4 = yhbll.GetModel(Convert.ToInt32(this.tblr5.Text));
+                    var yh4 = yhbll.GetModel(this.tblr5.Text);
                     this.tblrname5.Text = yh4.姓名;
                     bhd.CS_czyname4 = this.tblrname5.Text;
                 }
@@ -8578,7 +8578,7 @@ namespace scsjgl
                 #region 清洗
                 bhd.QX_lry = this.tblr6.Text;
                 bool result5;
-                result5 = yhbll.Exist(Convert.ToInt32(this.tblr6.Text));
+                result5 = yhbll.Exist(this.tblr6.Text);
 
 
                 if (this.tblr6.Text == "")
@@ -8593,7 +8593,7 @@ namespace scsjgl
                 }
                 else
                 {
-                    var yh4 = yhbll.GetModel(Convert.ToInt32(this.tblr6.Text));
+                    var yh4 = yhbll.GetModel(this.tblr6.Text);
                     this.tblrname6.Text = yh4.姓名;
                     bhd.QX_lryname = this.tblrname6.Text;
                 }
@@ -8604,7 +8604,7 @@ namespace scsjgl
                 #region 包装
                 bhd.BZ_lry = this.tblr7.Text;
                 bool result5;
-                result5 = yhbll.Exist(Convert.ToInt32(this.tblr7.Text));
+                result5 = yhbll.Exist(this.tblr7.Text);
 
                 if (this.tblr7.Text == "")
                 {
@@ -8618,7 +8618,7 @@ namespace scsjgl
                 }
                 else
                 {
-                    var yh4 = yhbll.GetModel(Convert.ToInt32(this.tblr7.Text));
+                    var yh4 = yhbll.GetModel(this.tblr7.Text);
                     this.tblrname7.Text = yh4.姓名;
                     bhd.BZ_lryname = this.tblrname7.Text;
                 }

@@ -76,13 +76,14 @@ namespace scsjgl
             }
             else
             {
-                var name =this.txtUserName.Text;
-                bool result = yhbll.Exist(name);
+                var gh = this.txtUserName.Text;
+                var gh1 = gh.ToString().PadLeft(5, '0');
+                bool result = yhbll.Exist(gh1);
                 if (result == true)
                 {
                     this.btnDeng.Enabled = true;
-                    tsuhan_scgl_yh yh = yhbll.GetModel(name);
-                    this.txtUserName.Text = Convert.ToString(yh.工号);
+                    tsuhan_scgl_yh yh = yhbll.GetModel(gh1);
+                    //this.txtUserName.Text = Convert.ToString(yh.工号);
                     this.txtUserPwd.Text = Convert.ToString(yh.密码);
                 }
                 else
@@ -136,7 +137,8 @@ namespace scsjgl
             else
             {
                 tsuhan_scgl_yh yh = new tsuhan_scgl_yh();
-                tsuhan_scgl_yh yh1 = yhbll.GetModel(this.txtUserName.Text);
+                var gh = this.txtUserName.Text;
+                tsuhan_scgl_yh yh1 = yhbll.GetModel(gh);
                 yh.密码 =this.txtNewPwd.Text.Trim();
                 yh.工号 = yh1.工号;
                 yh.姓名 = yh1.姓名;

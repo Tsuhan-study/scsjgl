@@ -174,6 +174,7 @@ namespace scsjgl
         {
             IQC iqc1 = new IQC();
             iqc1.Show();
+            ;
         }
     }
 }

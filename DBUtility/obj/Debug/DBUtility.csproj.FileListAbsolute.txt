@@ -1,0 +1,5 @@
+D:\scsjgl\DBUtility\bin\Debug\DBUtility.dll
+D:\scsjgl\DBUtility\bin\Debug\DBUtility.pdb
+D:\scsjgl\DBUtility\obj\Debug\DBUtility.csprojResolveAssemblyReference.cache
+D:\scsjgl\DBUtility\obj\Debug\DBUtility.dll
+D:\scsjgl\DBUtility\obj\Debug\DBUtility.pdb

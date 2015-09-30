@@ -1,0 +1,9 @@
+D:\scsjgl\DAL\bin\Debug\DAL.dll
+D:\scsjgl\DAL\bin\Debug\DAL.pdb
+D:\scsjgl\DAL\bin\Debug\DBUtility.dll
+D:\scsjgl\DAL\bin\Debug\Model.dll
+D:\scsjgl\DAL\bin\Debug\DBUtility.pdb
+D:\scsjgl\DAL\bin\Debug\Model.pdb
+D:\scsjgl\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\scsjgl\DAL\obj\Debug\DAL.dll
+D:\scsjgl\DAL\obj\Debug\DAL.pdb

@@ -1,0 +1,11 @@
+D:\scsjgl\BLL\bin\Debug\BLL.dll
+D:\scsjgl\BLL\bin\Debug\BLL.pdb
+D:\scsjgl\BLL\bin\Debug\DAL.dll
+D:\scsjgl\BLL\bin\Debug\DBUtility.dll
+D:\scsjgl\BLL\bin\Debug\Model.dll
+D:\scsjgl\BLL\bin\Debug\DAL.pdb
+D:\scsjgl\BLL\bin\Debug\DBUtility.pdb
+D:\scsjgl\BLL\bin\Debug\Model.pdb
+D:\scsjgl\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\scsjgl\BLL\obj\Debug\BLL.dll
+D:\scsjgl\BLL\obj\Debug\BLL.pdb

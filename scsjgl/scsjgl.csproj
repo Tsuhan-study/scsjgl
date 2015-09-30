@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5825198D-EA20-4727-A3A4-030089C90841}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>scsjgl</RootNamespace>
+    <AssemblyName>scsjgl</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PublishUrl>E:\scsjgl\Setup1\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChanPin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChanPin.Designer.cs">
+      <DependentUpon>ChanPin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChengPin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChengPin.Designer.cs">
+      <DependentUpon>ChengPin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DaoGLM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DaoGLM.Designer.cs">
+      <DependentUpon>DaoGLM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FanXiu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FanXiu.Designer.cs">
+      <DependentUpon>FanXiu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FanXiuC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FanXiuC.Designer.cs">
+      <DependentUpon>FanXiuC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GuiGeShu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuiGeShu.Designer.cs">
+      <DependentUpon>GuiGeShu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IQC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IQC.Designer.cs">
+      <DependentUpon>IQC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="iqc_check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="iqc_check.Designer.cs">
+      <DependentUpon>iqc_check.cs</DependentUpon>
+    </Compile>
+    <Compile Include="iqc_jyggs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="iqc_jyggs.Designer.cs">
+      <DependentUpon>iqc_jyggs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KeHuXX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KeHuXX.Designer.cs">
+      <DependentUpon>KeHuXX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rk.Designer.cs">
+      <DependentUpon>Rk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Select.Designer.cs">
+      <DependentUpon>Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectSpec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectSpec.Designer.cs">
+      <DependentUpon>SelectSpec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuiGongDan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuiGongDan.Designer.cs">
+      <DependentUpon>SuiGongDan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuiGongDanJTXX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuiGongDanJTXX.Designer.cs">
+      <DependentUpon>SuiGongDanJTXX.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChanPin.resx">
+      <DependentUpon>ChanPin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChengPin.resx">
+      <DependentUpon>ChengPin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DaoGLM.resx">
+      <DependentUpon>DaoGLM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FanXiu.resx">
+      <DependentUpon>FanXiu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FanXiuC.resx">
+      <DependentUpon>FanXiuC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuiGeShu.resx">
+      <DependentUpon>GuiGeShu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IQC.resx">
+      <DependentUpon>IQC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="iqc_check.resx">
+      <DependentUpon>iqc_check.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="iqc_jyggs.resx">
+      <DependentUpon>iqc_jyggs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KeHuXX.resx">
+      <DependentUpon>KeHuXX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rk.resx">
+      <DependentUpon>Rk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Select.resx">
+      <DependentUpon>Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectSpec.resx">
+      <DependentUpon>SelectSpec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuiGongDan.resx">
+      <DependentUpon>SuiGongDan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuiGongDanJTXX.resx">
+      <DependentUpon>SuiGongDanJTXX.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zhuomian3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{C23455FF-2B5C-4C91-87FD-5886081DE09D}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{D789A6B0-17C7-4DAD-8990-383A757682AA}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

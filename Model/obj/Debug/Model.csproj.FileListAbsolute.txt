@@ -1,0 +1,5 @@
+D:\scsjgl\Model\bin\Debug\Model.dll
+D:\scsjgl\Model\bin\Debug\Model.pdb
+D:\scsjgl\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\scsjgl\Model\obj\Debug\Model.dll
+D:\scsjgl\Model\obj\Debug\Model.pdb

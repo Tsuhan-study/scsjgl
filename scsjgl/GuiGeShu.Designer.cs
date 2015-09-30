@@ -547,6 +547,7 @@
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(741, 102);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(124, 31);

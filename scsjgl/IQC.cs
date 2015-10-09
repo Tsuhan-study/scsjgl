@@ -14,22 +14,21 @@ namespace scsjgl
 {
     public partial class IQC : Form
     {
-        //tsuhan_scgl_iqc_cxl cxl = new tsuhan_scgl_iqc_cxl();
-        //tsuhan_scgl_iqc_glql glql = new tsuhan_scgl_iqc_glql();
-        //tsuhan_scgl_iqc_jkzjl jkzjl = new tsuhan_scgl_iqc_jkzjl();
-        //tsuhan_scgl_iqc_jsjl jsjl = new tsuhan_scgl_iqc_jsjl();
-        //tsuhan_scgl_iqc_ktl ktl = new tsuhan_scgl_iqc_ktl();
-        //tsuhan_scgl_iqc_lbpl lbpl = new tsuhan_scgl_iqc_lbpl();
-        //tsuhan_scgl_iqc_ldl ldl = new tsuhan_scgl_iqc_ldl();
-        //tsuhan_scgl_iqc_pdptl pdptl = new tsuhan_scgl_iqc_pdptl();
-        //tsuhan_scgl_iqc_wxl wxl = new tsuhan_scgl_iqc_wxl();
+        tsuhan_scgl_iqc_cxl cxl = new tsuhan_scgl_iqc_cxl();
+        tsuhan_scgl_iqc_glql glql = new tsuhan_scgl_iqc_glql();
+        tsuhan_scgl_iqc_jkzjl jkzjl = new tsuhan_scgl_iqc_jkzjl();
+        tsuhan_scgl_iqc_jsjl jsjl = new tsuhan_scgl_iqc_jsjl();
+        tsuhan_scgl_iqc_ktl ktl = new tsuhan_scgl_iqc_ktl();
+        tsuhan_scgl_iqc_lbpl lbpl = new tsuhan_scgl_iqc_lbpl();
+        tsuhan_scgl_iqc_ldl ldl = new tsuhan_scgl_iqc_ldl();
+        tsuhan_scgl_iqc_pdptl pdptl = new tsuhan_scgl_iqc_pdptl();
+        tsuhan_scgl_iqc_wxl wxl = new tsuhan_scgl_iqc_wxl();
         YhBLL yhbll=new YhBLL();
         //
-        //Login1 fr;
+        string gh = Login.name;
         public IQC()
         {
             InitializeComponent();
-            //fr = log;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -161,11 +160,11 @@ namespace scsjgl
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //var usertype=
+            var gt = yhbll.GetModel(gh);
             switch(tabControl1.SelectedIndex)
             {
                 case 0:
-                    //if()
+                    //if(gt.职务)
                     break;
                 case 1:
                     break;
